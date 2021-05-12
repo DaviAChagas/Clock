@@ -1,0 +1,77 @@
+body {
+    background: #212121;
+}
+
+.mother-container {
+    display: flex;
+    text-align: center;
+    margin: 200px auto 0;
+    color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+}
+
+.dayName-container {
+
+}
+
+.date-container {
+    
+}
+
+.clock-container {
+    
+}
+
+@media only screen and (max-width: 700px) {
+
+    .dayName-container{
+        position: absolute;
+        left: 0px;
+        font-size: clamp(40px, 16.6vw, 12rem); 
+        top: clamp(5px, 4vw, 2.5rem);
+        width: 100%;
+    }
+    
+ .dayName-container span{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.date-container{
+        position: absolute;
+        left: 0px;
+        font-size: clamp(56px, 13.6vw, 5.56rem); 
+       width: 100%;  
+        margin-top: clamp(26px, auto, 16rem);
+    }
+ 
+.clock-container{
+        position: absolute;
+        left: 0px;
+        font-size: clamp(66px, 13.6vw, 5.56rem); 
+        width: 100%;  
+        margin-top: clamp(200px, 34.8vw, 25rem);
+    }
+
+.clock-container span, .date-container span{ 
+        padding: clamp(4px, 1.4vw, 2rem);
+        border-radius: 10px;
+    background: #006CE6;
+    margin-left: auto;
+    margin-right: auto;
+}
+  }
+
+@media only screen and (max-width: 373px) {
+    
+.clock-container span, .date-container span{          
+    padding: 0px;
+    border-radius: 0px;
+    background: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+    
+}
