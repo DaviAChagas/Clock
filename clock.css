@@ -1,5 +1,10 @@
+
 body {
     background: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
 }
 
 .mother-container {
@@ -10,18 +15,52 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+@media only screen and (min-width: 701px) {
+
+    .mother-container {
+        display: flex;
+        text-align: center;
+        color: #FFF;
+        font-family: Arial, Helvetica, sans-serif;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .dayName-container {
+        position: absolute;
+        top: 0;
+    left: 0;
+font-size: clamp(65px, 7.2vw, 7.5rem); 
+margin: clamp(2px, 0.5rem, 1vh);
 }
 
-.dayName-container {
+    .date-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: clamp(40px, 3.3vw, 4.5rem); 
+        margin: clamp(2.5px, 0.8rem, 1.3vh);
+    }
+
+    .clock-container {
+
+        font-size: clamp(56px, 15vw, 7.2rem); 
+         width: 100%;  
+          margin: 0 auto;
+          position: absolute;
+           top: 40%;
+    }
+
+    .clock-container span {
+      padding: clamp(4px, 1.4vw, 2rem);
+     border-radius: 15px;
+     background-image: linear-gradient(to bottom right, #369FFF, #006CE6);
+     margin-left: auto;
+margin-right: auto; 
 
 }
 
-.date-container {
-    
-}
-
-.clock-container {
-    
 }
 
 @media only screen and (max-width: 700px) {
@@ -58,8 +97,8 @@ body {
 .clock-container span, .date-container span{ 
         padding: clamp(4px, 1.4vw, 2rem);
         border-radius: 10px;
-    background: #006CE6;
-    margin-left: auto;
+        background-image: linear-gradient(to bottom right, #369FFF, #006CE6);
+        margin-left: auto;
     margin-right: auto;
 }
   }
