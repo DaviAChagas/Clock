@@ -55,9 +55,9 @@ margin: clamp(2px, 0.5rem, 1vh);
     .clock-container span {
       padding: clamp(4px, 1.4vw, 2rem);
      border-radius: 15px;
-     background-image: linear-gradient(to bottom right, #369FFF, #006CE6);
+    /* background-image: linear-gradient(to bottom right, #369FFF, #006CE6); */
      margin-left: auto;
-margin-right: auto; 
+    margin-right: auto; 
 
 }
 
@@ -97,18 +97,17 @@ margin-right: auto;
 .clock-container span, .date-container span{ 
         padding: clamp(4px, 1.4vw, 2rem);
         border-radius: 10px;
-        background-image: linear-gradient(to bottom right, #369FFF, #006CE6);
         margin-left: auto;
-    margin-right: auto;
+        margin-right: auto;
 }
   }
 
-@media only screen and (max-width: 373px) {
+  @media only screen and (max-width: 373px) and (min-width: 0px) {
     
 .clock-container span, .date-container span{          
     padding: 0px;
     border-radius: 0px;
-    background: none;
+  background: none; 
     margin-left: auto;
     margin-right: auto;
 }
