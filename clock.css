@@ -7,7 +7,7 @@ body {
     background-color: #191919;
     color: #E4E4E4;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
