@@ -1,115 +1,77 @@
-
+* {
+    padding: 0;
+    margin: 0;
+}
 body {
-    background: #212121;
+    background-color: #191919;
+    color: #E4E4E4;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto;
 }
 
-.mother-container {
+h1 {
+    font-weight: 100;
+    font-size: 5vw;
+}
+
+h2 {
+    font-size: 3.8vw;
+    margin: -4vh 0 2vh 0;
+}
+
+.container {
+    width: 60vw;
+    height: 60vh;
+    padding: 5vh 5vw 5vh 5vw;
     display: flex;
-    text-align: center;
-    margin: 200px auto 0;
-    color: #FFF;
-    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column;
 }
 
-@media only screen and (min-width: 701px) {
-
-    .mother-container {
-        display: flex;
-        text-align: center;
-        color: #FFF;
-        font-family: Arial, Helvetica, sans-serif;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .dayName-container {
-        position: absolute;
-        top: 0;
-    left: 0;
-font-size: clamp(65px, 7.2vw, 7.5rem); 
-margin: clamp(2px, 0.5rem, 1vh);
+.time {
+    height: 12vw;
+    width: 12vw;
+    padding: 0.1vw;
+    font-size: 4.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1vw solid transparent;
+    border-radius: 1.6vw;
+    background-image: linear-gradient(#191919, #191919),
+    linear-gradient(135deg, #CC66F0, #3792AF);
+    border-image-slice: 1;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
-    .date-container {
-        position: absolute;
-        top: 0;
-        right: 0;
-        font-size: clamp(40px, 3.3vw, 4.5rem); 
-        margin: clamp(2.5px, 0.8rem, 1.3vh);
-    }
 
-    .clock-container {
-
-        font-size: clamp(56px, 15vw, 7.2rem); 
-         width: 100%;  
-          margin: 0 auto;
-          position: absolute;
-           top: 40%;
-    }
-
-    .clock-container span {
-      padding: clamp(4px, 1.4vw, 2rem);
-     border-radius: 15px;
-    /* background-image: linear-gradient(to bottom right, #369FFF, #006CE6); */
-     margin-left: auto;
-    margin-right: auto; 
-
+.clock {
+    display: flex;
+    gap: 4vw;
+    justify-content:space-around;
+    align-items: center;
 }
 
-}
+@media screen and (max-device-width: 800px){
 
-@media only screen and (max-width: 700px) {
-
-    .dayName-container{
-        position: absolute;
-        left: 0px;
-        font-size: clamp(40px, 16.6vw, 12rem); 
-        top: clamp(5px, 4vw, 2.5rem);
-        width: 100%;
+    h1 {
+        font-size: 9vw;
     }
     
- .dayName-container span{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.date-container{
-        position: absolute;
-        left: 0px;
-        font-size: clamp(56px, 13.6vw, 5.56rem); 
-       width: 100%;  
-        margin-top: clamp(26px, auto, 16rem);
-    }
- 
-.clock-container{
-        position: absolute;
-        left: 0px;
-        font-size: clamp(66px, 13.6vw, 5.56rem); 
-        width: 100%;  
-        margin-top: clamp(200px, 34.8vw, 25rem);
+    h2 {
+        font-size: 7.5vw;
     }
 
-.clock-container span, .date-container span{ 
-        padding: clamp(4px, 1.4vw, 2rem);
-        border-radius: 10px;
-        margin-left: auto;
-        margin-right: auto;
-}
-  }
+    .time {
+        height: 25vw;
+        width: 25vw;
+        font-size: 8.5vw;
+    }
 
-  @media only screen and (max-width: 373px) and (min-width: 0px) {
-    
-.clock-container span, .date-container span{          
-    padding: 0px;
-    border-radius: 0px;
-  background: none; 
-    margin-left: auto;
-    margin-right: auto;
-}
-    
 }
