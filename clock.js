@@ -3,13 +3,13 @@ const date = document.querySelector('.date')
 const clock = document.querySelector('.clock') 
 
 const days = [
-    "Sunday", 
-    "Monday", 
-    "Tuesday", 
-    "Wednesday", 
-    "Thursday", 
-    "Friday", 
-    "Saturday"
+    'Sunday', 
+    'Monday', 
+    'Tuesday', 
+    'Wednesday', 
+    'Thursday', 
+    'Friday', 
+    'Saturday'
 ]
 
 const formatTimeUnit = unit => String(unit).length === 1 ? `0${unit}` : unit
@@ -38,10 +38,9 @@ const getDateData = () => {
     }
 }
 
-
 const putDataOnScreen = ({dayIndex, seconds, minutes, hours, dates}) => {
         
-        let day = ` <h1>${days[dayIndex]}</h1>  `
+        let day = ` <h1>${ days[dayIndex] }</h1>  `
 
         let clockSpans = `
             <span class="time">${formatTimeUnit(hours)}</span>
