@@ -59,7 +59,7 @@ h2 {
     align-items: center;
 }
 
-@media screen and (max-device-width: 800px){
+@media screen and (max-device-width: 850px){
 
     h1 {
         font-size: 9vw;
@@ -73,6 +73,17 @@ h2 {
         height: 25vw;
         width: 25vw;
         font-size: 8.5vw;
+    }
+
+}
+
+@media (orientation: portrait) {
+    h1 {
+        font-size: 13vw;
+    }
+
+    h2 {
+        margin: -9vh 0 2vh 0;
     }
 
 }
