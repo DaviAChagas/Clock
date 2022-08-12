@@ -1,79 +1,64 @@
-const clockContainer = document.querySelector('.mother-container')
+const weekday = document.querySelector('.weekdays')
+const date = document.querySelector('.date')
+const clock = document.querySelector('.clock') 
+
+const days = [
+    "Sunday", 
+    "Monday", 
+    "Tuesday", 
+    "Wednesday", 
+    "Thursday", 
+    "Friday", 
+    "Saturday"
+]
 
 const formatTimeUnit = unit => String(unit).length === 1 ? `0${unit}` : unit
 
+const getDateData = () => {
+    const dateData = new Date() 
 
-const formatColor = hours => {
+    let dayIndex = dateData.getDay()
+    
+    let seconds = dateData.getSeconds()
+    let minutes = dateData.getMinutes()
+    let hours = dateData.getHours()
 
-    if((06 >= formatTimeUnit(hours)) || ((formatTimeUnit(hours) < 18))){
-        return "#369FFF, #006CE6"
+    let dates = dateData.toLocaleString("en-US", { 
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    })
+
+        return {
+            dayIndex,
+            seconds,
+            minutes,
+            hours,
+            dates
     }
-    if((05 <= formatTimeUnit(hours)) || ((formatTimeUnit(hours) >= 18))){
-        return "#7C838A, #E6F3FF"
-}
 }
 
 
-const getColorSpan = (hours) => `
+const putDataOnScreen = ({dayIndex, seconds, minutes, hours, dates}) => {
+        
+        let day = ` <h1>${days[dayIndex]}</h1>  `
 
-<style>
+        let clockSpans = `
+            <span class="time">${formatTimeUnit(hours)}</span>
 
-@media only screen and (max-width: 700px) and (min-width: 374px){
- .clock-container span, .date-container span{ 
-     padding: clamp(4px, 1.4vw, 2rem);
-     background: linear-gradient(to bottom right, ${formatColor(hours)});
-    }}
+            <span class="time">${formatTimeUnit(minutes)}</span>
 
-@media only screen and (min-width: 701px) {
- .clock-container span {
- background: linear-gradient(to bottom right, ${formatColor(hours)});
-}}
-
-</style>
+            <span class="time">${formatTimeUnit(seconds)}</span>
 `
 
-   const getClockHTML = (daysNames,days,years, months, dates, hours, minutes, seconds) => `
-
-   ${getColorSpan(hours)}
-
-<div class="dayName-container"><span>${daysNames[days]}</span></div>
-
-   <div class="date-container">
-   <span>${formatTimeUnit(years)}</span> /
-   <span>${formatTimeUnit(months + 1)}</span> /
-   <span>${formatTimeUnit(dates)}</span></div>
-
-    <div class="clock-container">
-    <span>${formatTimeUnit(hours)}</span> :
-    <span>${formatTimeUnit(minutes)}</span> :
-    <span>${formatTimeUnit(seconds)}</span> </div>
-`
-
-const updateClock  = () => {
-
-const present = new Date();
-
-const daysNames = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-    ]
-
-const days = present.getDay()   
-
-const years = present.getFullYear()
-const months = present.getMonth()
-const dates = present.getDate() 
-
-const hours = present.getHours()
-const minutes = present.getMinutes()
-const seconds = present.getSeconds()
-
-clockContainer.innerHTML = getClockHTML(daysNames,days,years, months, dates, hours, minutes, seconds)
+    weekday.innerHTML = day
+    date.innerHTML = `<h2>${dates}</h2>`
+    clock.innerHTML = clockSpans
 }
 
-setInterval(updateClock, 1000)
+
+const updateScreen = () => {
+    putDataOnScreen(getDateData())
+}
+
+setInterval(updateScreen, 1000)
